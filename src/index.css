@@ -36,36 +36,96 @@ body {
   text-decoration: none;
   font-size: 16px;
   text-transform: uppercase;
+  position: relative; /* Для псевдоэлемента */
+  transition: color 0.3s ease; /* Плавное изменение цвета */
 }
+
+/* Эффект при наведении */
+.header nav a:hover {
+  color: #0088cc; /* Изменение цвета текста */
+}
+
+/* Добавляем нижнюю линию при наведении */
+.header nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; /* Расстояние от текста до линии */
+  left: 0;
+  width: 0;
+  height: 2px; /* Толщина линии */
+  background-color: #0088cc; /* Цвет линии */
+  transition: width 0.3s ease; /* Анимация линии */
+}
+
+/* Увеличение ширины линии при наведении */
+.header nav a:hover::after {
+  width: 100%; /* Линия становится такой же ширины, как текст */
+}
+
 
 .hero {
   text-align: center;
   padding: 100px 20px;
-  background: linear-gradient(135deg, #333, #999);
-  color: #fff;
+  background: 
+    linear-gradient(135deg, rgba(51, 51, 51, 0.7), rgba(153, 153, 153, 0.7)), /* Прозрачный градиент */
+    url('https://img.freepik.com/free-photo/modern-living-room-style_53876-144814.jpg?ga=GA1.1.1258551811.1721737595&semt=ais_incoming'); /* Ссылка на фон */
+  background-size: cover; /* Масштабирование для покрытия всего блока */
+  background-position: center; /* Центровка изображения */
+  background-repeat: no-repeat; /* Отключение повторения */
+  color: #fff; /* Цвет текста */
+  position: relative;
 }
 
 .hero h1 {
-  font-size: 48px;
+  font-size: 54px; /* Увеличенный размер */
   margin-bottom: 20px;
   font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px; /* Увеличение интервала между буквами */
+  color: #f2f2f2; /* Светлый цвет для контраста */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Тень для объема */
+  transition: transform 0.3s ease; /* Анимация увеличения при наведении */
+}
+
+.hero h1:hover {
+  transform: scale(1.05); /* Легкое увеличение */
 }
 
 .hero p {
-  font-size: 18px;
+  font-size: 20px; /* Чуть крупнее для читаемости */
   margin-bottom: 30px;
+  color: #ddd; /* Сероватый цвет */
+  max-width: 600px; /* Ограничение ширины текста */
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6; /* Увеличенный межстрочный интервал */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero .cta {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: #fff;
-  color: #333;
+  padding: 12px 25px;
+  background-color: #ffa500; /* Оранжевый цвет, ассоциирующийся с ремонтом и энергией */
+  color: #fff; /* Контрастный цвет текста */
   text-transform: uppercase;
   font-weight: bold;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 50px; /* Скругление для мягкого стиля */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Легкая тень */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Анимация цвета и увеличения */
 }
+
+.hero .cta:hover {
+  background-color: #ff8500; /* Более насыщенный оранжевый при наведении */
+  transform: translateY(-3px); /* Легкое поднятие кнопки */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Увеличение тени */
+}
+
+.hero .cta:active {
+  transform: translateY(2px); /* Нажатие кнопки */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Уменьшение тени */
+}
+
 
 .section {
   padding: 60px 20px;
@@ -108,4 +168,95 @@ body {
   background-color: #000;
   color: #fff;
   font-size: 14px;
+}
+
+.footer .telegram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #0088cc;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.footer .telegram-link:hover {
+  color: #005f8a;
+}
+
+.header .telegram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #0088cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header .telegram-link:hover {
+  color: #005f8a;
+}
+
+
+/* HERO адаптация */
+@media (max-width: 768px) {
+  .hero {
+    padding: 50px 10px; /* Уменьшаем отступы */
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 36px; /* Уменьшенный размер текста */
+    margin-bottom: 15px;
+  }
+
+  .hero p {
+    font-size: 16px; /* Уменьшенный размер описания */
+    margin-bottom: 20px;
+  }
+
+  .hero .cta {
+    padding: 10px 20px; /* Уменьшаем кнопку */
+    font-size: 14px;
+  }
+}
+
+/* Header адаптация */
+@media (max-width: 768px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .header nav {
+    display: none; /* Скрываем навигацию */
+  }
+
+  .header .menu-icon {
+    display: block; /* Показываем иконку меню */
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+/* Меню-бургер (показ навигации при клике) */
+.menu-open .header nav {
+  display: block;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.menu-open .header nav a {
+  display: block;
+  margin: 10px 0;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
 }
