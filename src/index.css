@@ -139,28 +139,50 @@ body {
 
 .services {
   display: flex;
+  justify-content: space-between;
   gap: 20px;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .service {
   flex: 1 1 calc(33.333% - 20px);
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
   text-align: center;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
 
 .service h3 {
   font-size: 20px;
   margin-bottom: 10px;
+  color: #333;
 }
 
 .service p {
-  font-size: 14px;
+  font-size: 16px;
   color: #666;
 }
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  .services {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .service {
+    flex: 1 1 100%;
+  }
+}
+
 
 .footer {
   text-align: center;

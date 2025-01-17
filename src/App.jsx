@@ -38,14 +38,19 @@ const App = () => {
         <h2 className="section-title">Наши услуги</h2>
         <div className="services">
           <div className="service">
+          <img src="https://img.freepik.com/free-photo/assemble-manufacturing-production-business-pattern_53876-133939.jpg?ga=GA1.1.1258551811.1721737595&semt=ais_incoming" alt="Дизайн-проект" />
             <h3>Дизайн-проект</h3>
             <p>Создание уникального интерьера под ваш стиль.</p>
-          </div>
+          </div>          
+
           <div className="service">
+            <img src="https://img.freepik.com/free-photo/cement-wall-with-white-spot_1249-87.jpg?ga=GA1.1.1258551811.1721737595&semt=ais_incoming" alt="Черновая отделка" />
             <h3>Черновая отделка</h3>
             <p>Полное выравнивание стен, полов и потолков.</p>
           </div>
+
           <div className="service">
+          <img src="https://img.freepik.com/free-photo/living-room-with-modern-beautiful-decoration_181624-44716.jpg?ga=GA1.1.1258551811.1721737595&semt=ais_incoming" alt="Чистовая отделка" />
             <h3>Чистовая отделка</h3>
             <p>Качественная отделка с использованием лучших материалов.</p>
           </div>

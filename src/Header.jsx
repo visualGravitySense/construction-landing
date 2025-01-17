@@ -15,9 +15,9 @@ const Header = () => {
         ☰ 
       </div> */}
       <nav>
-        <a href="#services">Услуги</a>
-        <a href="#portfolio">Портфолио</a>
-        <a href="#contact">Контакты</a>
+        {/* <a href="#services">Услуги</a> */}
+        {/* <a href="#portfolio">Портфолио</a> */}
+        {/* <a href="#contact">Контакты</a> */}
       </nav>
 
       <a
